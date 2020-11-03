@@ -19,18 +19,22 @@ namespace IndividualProject.BussinessLogic
             Trainer trainer = new Trainer();
             trainer.FirstName = AskDetail("Give me yout first name");
             trainer.LastName  = AskDetail("Give me yout last name");
-            
             trainer.Subject   = AskDetail("Give me the subject you teach",subjects);
 
             return trainer;
             }
 
-        public Course GetCourseDetails(List<string> subjects = null)
+        public Course GetCourseDetails(List<string> titles = null, List<string> stream = null, List<string> type = null)
         {
+
+            if (titles == null) titles = new List<string>() { "CB8" , "CB7" };
+            if (stream == null) stream = new List<string>() { "Java", "C#" };
+            if (type == null) type = new List<string>() { "Full Time","Part Time" };
+
             Course course = new Course();
-            course._title     = AskDetail("Give me the title of your course");
-            course._stream    = AskDetail("Whats your stream");
-            course._type      = AskDetail("Whats is your type");
+            course._title     = AskDetail("Give me the title of your course",titles);
+            course._stream    = AskDetail("Whats your stream",stream);
+            course._type      = AskDetail("Whats is your type",type);
             course.Start_date = AskDetail("Tell me the start_date");
             course.End_date   = AskDetail("Tell me the end_date");
 
@@ -66,7 +70,6 @@ namespace IndividualProject.BussinessLogic
 
         private string AskDetail(string message, List<string> subjects = null)
         {
-            //            subjects.Add("C#","Jave","Javescript","Python","PHP");
             string result = "";
             Console.Write(message + ": ");
             if (subjects != null)
@@ -91,15 +94,15 @@ namespace IndividualProject.BussinessLogic
             foreach (var item in elements)
             {
                 Console.WriteLine($"{counter++}. {item}");
-                
             }
-            int p = 0;
-            while(p<=5)
-            {    
-                int choise = Convert.ToInt32(Console.ReadLine()); // kapoio while kati gia 1-5
-                result = elements.ElementAt(choise - 1); //elements[choise-1];
-                p++;
-                }
+            int choise = Convert.ToInt32(Console.ReadLine()); // kapoio while kati gia 1-5
+            
+            while (choise>elements.Count())
+            {
+                Console.WriteLine("Something went wrong. Type again!!!");
+                choise = Convert.ToInt32(Console.ReadLine());
+            }
+            result = elements.ElementAt(choise - 1); //elements[choise-1];
 
             return result;
         }
