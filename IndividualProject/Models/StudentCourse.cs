@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IndividualProject.Models
 {
-    class Student:Naming
+    class StudentCourse
     {
         private string _firstname; //{ get; set;}
         private string _lastname;
@@ -44,19 +44,14 @@ namespace IndividualProject.Models
             set { _choosecourse = value; }
         }
 
-        public Student()
-        {
-                
-        }
-        public Student(string name)
-        {
-            this.Name = name;
-            Console.WriteLine(name);
-        }
-       
+
+
         public override string ToString()
         {
-            return ($"First Name: {_firstname}\tLast Name: {_lastname}\tDate of birth: {_dateofbirth}\tTution fees:{_tutionfees}");
+            return ($"First Name: {_firstname}\tLast Name: {_lastname}" +
+                $"\tDate of birth: {_dateofbirth}\tTution fees:{_tutionfees}\tCourse:{_choosecourse}");
         }
+
+
     }
 }

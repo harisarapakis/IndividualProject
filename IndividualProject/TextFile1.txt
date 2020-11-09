@@ -1,0 +1,6 @@
+﻿PrivateSchool
+	Humans
+		Trainers
+		Students
+	Courses
+	Assigments

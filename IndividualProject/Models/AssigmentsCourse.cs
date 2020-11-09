@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IndividualProject.Models
 {
-    class Assignment:Naming
+    class AssigmentsCourse
     {
         private string _title; //"Individual Project Part A"
         private string _description; //"A private school that has Course , Trainer, Assigment, Student"
@@ -41,18 +41,17 @@ namespace IndividualProject.Models
             get { return (this._totalMark); }
             set { this._totalMark = value.ToUpper(); }
         }
-        public Assignment()
-        {
+        private string _choosecourse;
 
-        }
-        public Assignment(string name)
+        public string Choosecourse
         {
-            this.Name = name;
-            Console.WriteLine(name);
+            get { return _choosecourse; }
+            set { _choosecourse = value; }
         }
         public override string ToString()
         {
-            return ($"Title: {_title}\tDescription: {_description}\tSubDateTime: {_subDateTime}\tOralMark:{_oralMark}\tTotalMark:{_totalMark}");
+            return ($"Title: {_title}\tDescription: {_description}" +
+                $"\tSubDateTime: {_subDateTime}\tOralMark:{_oralMark}\tTotalMark:{_totalMark}\tCourse:{_choosecourse}");
         }
     }
 }

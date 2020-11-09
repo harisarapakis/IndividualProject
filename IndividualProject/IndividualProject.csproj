@@ -43,16 +43,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BussinessLogic\AssigmentsPerCourseUtils.cs" />
+    <Compile Include="BussinessLogic\AssigmentsUtils.cs" />
     <Compile Include="BussinessLogic\CommandPromtUtils.cs" />
+    <Compile Include="BussinessLogic\BaseUtils.cs" />
+    <Compile Include="BussinessLogic\CourseUtils.cs" />
+    <Compile Include="BussinessLogic\StudentsUtils.cs" />
+    <Compile Include="BussinessLogic\TrainerPerCourseUtils.cs" />
+    <Compile Include="BussinessLogic\TrainerUtils.cs" />
+    <Compile Include="Models\AssigmentsCourse.cs" />
     <Compile Include="Models\Assignment.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Naming.cs" />
+    <Compile Include="Models\PrivateSchool.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentCourse.cs" />
+    <Compile Include="BussinessLogic\StudentsPerCourseUtils.cs" />
+    <Compile Include="BussinessLogic\StudentsCourseAssigments.cs" />
     <Compile Include="Models\Trainer.cs" />
+    <Compile Include="Models\TrainerCourse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="BussinessLogic\.editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
