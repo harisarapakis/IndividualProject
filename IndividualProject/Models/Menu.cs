@@ -17,11 +17,11 @@ namespace IndividualProject.Models
             List<Assignment> assigments, List<Course> courses)
         {
             StudentsPerCourseUtils studentsToCourses = new StudentsPerCourseUtils();
-            foreach (var item in studentsToCourses.studentCourses1)
-            {
-                Console.WriteLine(item.C);
-                students.Add(item)
-            }
+            //foreach (var item in studentsToCourses.studentCourses1)
+            //{
+            //    Console.WriteLine(item.C);
+            //    students.Add(item)
+            //}
         }
     }
 }
